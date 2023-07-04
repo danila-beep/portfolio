@@ -5,7 +5,7 @@ type NavLinkProps = {
     title: string
     href?: string
     isActive?: boolean
-    activeSetter?: () => void
+    activeSetter: () => void
     size?: string
     onClick?: () => void
 }
@@ -43,6 +43,8 @@ const NavLink: FC<NavLinkProps> = (props) => {
         if (props.activeSetter && props.onClick) {
             props.activeSetter()
             props.onClick()
+        } else {
+            props.activeSetter()
         }
     }
 

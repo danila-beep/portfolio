@@ -9,6 +9,7 @@ const AboutSection = () => {
         <section className={s.aboutWrapper} id={"about"}>
             <div className={s.aboutContainer}>
                 <Heading>About <span>Me</span></Heading>
+
                 <div className={s.aboutRow}>
 
                     <div className={s.photoColumn}>

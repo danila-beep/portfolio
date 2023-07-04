@@ -8,18 +8,19 @@ import SkillsSection from "./Components/SkillsSection/SkillsSection";
 import ContactSection from "./Components/ContactSection/ContactSection";
 import Footer from "./Components/Footer/Footer";
 import BurgerMenu from "./Components/BurgerMenu/BurgerMenu";
-import FixedButton from "./shared/FixedButton";
 import GlobalStyles from "./utils/GlobalStyles";
-import ThemeSwitcherList from "./Components/ThemeSwitcherList/ThemeSwitcherList";
 import {blueColorPalette} from "./shared/ColorThemes";
+import ThemeSwitcherList from "./Components/ThemeSwitcherList/ThemeSwitcherList";
+import FixedButton from "./shared/FixedButton";
 
 function App() {
+
+    // Active State & Setters
     const [isActiveHome, setActiveHome] = useState(true)
     const [isActiveAbout, setActiveAbout] = useState(false)
     const [isActiveEducation, setActiveEducation] = useState(false)
     const [isActiveSkills, setActiveSkills] = useState(false)
     const [isActiveContacts, setActiveContacts] = useState(false)
-
     const activeHomeSetter = () => {
         setActiveHome(true)
         setActiveAbout(false)
@@ -56,20 +57,25 @@ function App() {
         setActiveContacts(true)
     }
 
+
+    // Burger menu
     const [isBurgerMenuShowed, setBurgerMenuShowed] = useState(false)
     const showBurgerMenu = () => {
         setBurgerMenuShowed(!isBurgerMenuShowed)
     }
 
+
+    // Theme changer
     const [globalColorPalette , setGlobalColorPalette] = useState(blueColorPalette)
     const themeSwitcher = (theme: any) => {
         setGlobalColorPalette(theme)
     }
-
     const [isColorMenuShowed, setColorMenuShowed] = useState(false)
     const themeMenuSetter = (value: boolean) => {
         setColorMenuShowed(value)
     }
+
+    // Lang changer
 
     return (
         <div className={"App"}>
@@ -105,6 +111,7 @@ function App() {
                 />
                 : undefined
             }
+
             <HomeSection/>
             <AboutSection/>
             <EducationSection/>

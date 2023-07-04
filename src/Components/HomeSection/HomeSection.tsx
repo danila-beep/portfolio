@@ -2,7 +2,6 @@ import React from "react";
 import Button from "../../shared/Button";
 import Heading from "../../shared/Heading";
 import s from "./homeSection.module.css"
-import SocialLink from "../../shared/SocialLinks";
 
 const HomeSection = () => {
     return (
