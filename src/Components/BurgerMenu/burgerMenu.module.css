@@ -1,0 +1,19 @@
+.burgerNav {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 99;
+    background: var(--bg-color);
+}
+
+@media (min-width: 767px) {
+    .burgerNav {
+        display: none;
+    }
+}

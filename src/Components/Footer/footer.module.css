@@ -1,0 +1,51 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    background: var(--second-bg-color);
+    z-index: 100;
+}
+
+.footerIconTop a{
+    padding: .5rem;
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--main-color);
+    border: .2rem solid var(--main-color);
+    border-radius: .6rem;
+    color: var(--bg-color);
+    transition: .5s;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.footerIconTop a:hover {
+    color: var(--text-color);
+}
+
+
+.footerIconTop a:hover::before {
+    width: 100%;
+}
+
+.footerIconTop a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: var(--second-bg-color);
+    z-index: -1;
+    transition: .5s;
+}
+
+@media (max-width: 991px) {
+    .footer {
+        padding: 2rem 4%;
+    }
+}
