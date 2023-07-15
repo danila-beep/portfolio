@@ -25,3 +25,10 @@ export const pinkColorPalette = {
     "text-color": "#E6EBE0",
     "main-color": "#DABFFF"
 }
+
+export const colorPaletteVariants = [
+    blueColorPalette,
+    redColorPalette,
+    brownColorPalette,
+    pinkColorPalette
+]

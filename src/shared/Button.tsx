@@ -26,7 +26,7 @@ const Button: FC<ButtonProps> = (props) => {
     color: ${props.theme === "dark" 
         ? "var(--main-color)" 
         : "var(--bg-color)"};
-    z-index: 1;
+    z-index: 200;
     overflow: hidden;
     transition: .5s;
     cursor: pointer;

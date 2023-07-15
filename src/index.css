@@ -8,7 +8,7 @@
     text-decoration: none;
     border: none;
     outline: none;
-    scroll-behavior: smooth;
+    scroll-behavior:inherit;
 }
 
 
@@ -20,6 +20,7 @@
 
 /*9.6 px*/
 html {
+    scroll-behavior: smooth;
     position: relative;
     font-size: 60%;
     height: 100%;

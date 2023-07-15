@@ -15,7 +15,6 @@
 .sticky {
     position: sticky;
     background: var(--bg-color);
-    opacity: 1;
 }
 
 .logo {
