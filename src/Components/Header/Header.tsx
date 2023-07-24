@@ -8,11 +8,13 @@ type HeaderProps = {
   isActiveAbout: boolean;
   isActiveEducation: boolean;
   isActiveSkills: boolean;
+  isActiveProjects: boolean;
   isActiveContacts: boolean;
   activeHomeSetter: () => void;
   activeAboutSetter: () => void;
   activeEducationSetter: () => void;
   activeSkillsSetter: () => void;
+  activeProjectsSetter: () => void;
   activeContactsSetter: () => void;
   isBurgerMenuShowed: boolean;
   showBurgerMenu: () => void;
@@ -55,6 +57,12 @@ const Header: FC<HeaderProps> = (props) => {
           href={"#skills"}
           isActive={props.isActiveSkills}
           activeSetter={props.activeSkillsSetter}
+        />
+        <NavLink
+          title={"Projects"}
+          href={"#projects"}
+          isActive={props.isActiveProjects}
+          activeSetter={props.activeProjectsSetter}
         />
         <NavLink
           title={"Contacts"}

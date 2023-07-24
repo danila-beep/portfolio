@@ -2,10 +2,11 @@ import React from "react";
 import s from "./educationSection.module.css";
 import { UilCalender } from "@iconscout/react-unicons";
 import Heading from "../../shared/Heading";
+import { SectionWrapper } from "../../shared/SectionWrapper";
 
 const EducationSection = () => {
   return (
-    <section className={s.educationWrapper} id={"education"}>
+    <SectionWrapper id={"education"}>
       <div className={s.educationContainer}>
         <Heading centered>
           My <span>Education</span> and <span>Experience</span>
@@ -84,7 +85,7 @@ const EducationSection = () => {
           </div>
         </div>
       </div>
-    </section>
+    </SectionWrapper>
   );
 };
 

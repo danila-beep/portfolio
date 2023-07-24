@@ -1,10 +1,11 @@
 import s from "./aboutSection.module.css";
 import Button from "../../shared/Button";
 import Heading from "../../shared/Heading";
+import { SectionWrapper } from "../../shared/SectionWrapper";
 
 const AboutSection = () => {
   return (
-    <section className={s.aboutWrapper} id={"about"}>
+    <SectionWrapper id={"about"} invertedColor>
       <div className={s.aboutContainer}>
         <Heading>
           About <span>Me</span>
@@ -38,7 +39,7 @@ const AboutSection = () => {
           <Button title={"Read More"} />
         </div>
       </div>
-    </section>
+    </SectionWrapper>
   );
 };
 

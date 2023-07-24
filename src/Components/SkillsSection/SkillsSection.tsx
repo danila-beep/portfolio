@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import s from "./skillsSection.module.css";
 import Heading from "../../shared/Heading";
 import { useInView } from "react-intersection-observer";
+import { SectionWrapper } from "../../shared/SectionWrapper";
 
 const SkillsSection = () => {
   const [ref, inView] = useInView();
@@ -42,7 +43,7 @@ const SkillsSection = () => {
   }, [inView]);
 
   return (
-    <section className={s.skillsWrapper} id={"skills"} ref={ref}>
+    <SectionWrapper id={"skills"} ref={ref} invertedColor>
       <div className={s.skillsContainer}>
         <Heading centered>
           My <span>skills</span>
@@ -107,7 +108,7 @@ const SkillsSection = () => {
           </div>
         </div>
       </div>
-    </section>
+    </SectionWrapper>
   );
 };
 

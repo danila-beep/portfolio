@@ -11,6 +11,21 @@
     z-index: 130;
     background: var(--bg-color);
 }
+.closeButton {
+    position: absolute;
+    top: 2rem;
+    right: 4rem;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.closeButton:hover {
+    color: var(--main-color);
+}
+
+.closeButton:active {
+    transform: scale(110%);
+}
 
 @media (min-width: 767px) {
     .burgerNav {

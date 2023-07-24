@@ -20,7 +20,7 @@
 
 /*9.6 px*/
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
     position: relative;
     font-size: 60%;
     height: 100%;

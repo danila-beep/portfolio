@@ -6,6 +6,7 @@ type ThemesTypes = "dark" | "light";
 type ButtonProps = {
   title: string;
   theme?: ThemesTypes;
+  link?: string
 };
 
 const Button: FC<ButtonProps> = (props) => {
@@ -26,7 +27,7 @@ const Button: FC<ButtonProps> = (props) => {
     color: ${props.theme === "dark" 
         ? "var(--main-color)" 
         : "var(--bg-color)"};
-    z-index: 200;
+    z-index: 100;
     overflow: hidden;
     transition: .5s;
     cursor: pointer;
@@ -54,7 +55,7 @@ const Button: FC<ButtonProps> = (props) => {
     }
   `;
 
-  return <BtnStyled>{props.title}</BtnStyled>;
+  return <BtnStyled href={props.link}>{props.title}</BtnStyled>;
 };
 
 export default Button;

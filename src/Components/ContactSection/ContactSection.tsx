@@ -2,10 +2,11 @@ import React from "react";
 import s from "./contactSection.module.css";
 import Heading from "../../shared/Heading";
 import Button from "../../shared/Button";
+import { SectionWrapper } from "../../shared/SectionWrapper";
 
 const ContactSection = () => {
   return (
-    <section className={s.contactWrapper} id={"contacts"}>
+    <SectionWrapper id={"contacts"} invertedColor>
       <div className={s.contactContainer}>
         <Heading>
           Contact <span>Me</span>
@@ -45,7 +46,7 @@ const ContactSection = () => {
         </form>
         <Button title={"Submit"} />
       </div>
-    </section>
+    </SectionWrapper>
   );
 };
 

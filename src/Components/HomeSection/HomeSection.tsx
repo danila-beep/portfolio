@@ -2,10 +2,11 @@ import React from "react";
 import Button from "../../shared/Button";
 import Heading from "../../shared/Heading";
 import s from "./homeSection.module.css";
+import { SectionWrapper } from "../../shared/SectionWrapper";
 
 const HomeSection = () => {
   return (
-    <section className={s.homeWrapper} id={"home"}>
+    <SectionWrapper id={"home"}>
       <div className={s.homeContainer}>
         <div className={s.homeContent}>
           <Heading>
@@ -29,7 +30,7 @@ const HomeSection = () => {
         </div>
         <div className={s.homePhoto}></div>
       </div>
-    </section>
+    </SectionWrapper>
   );
 };
 

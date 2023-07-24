@@ -11,6 +11,7 @@ import BurgerMenu from "./Components/BurgerMenu/BurgerMenu";
 import GlobalStyles from "./utils/GlobalStyles";
 import { blueColorPalette } from "./shared/ColorThemes";
 import FixedButton from "./shared/FixedButton";
+import ProjectsSection from "./Components/ProjectsSection/ProjectsSection";
 
 function App() {
   // Active State & Setters
@@ -18,12 +19,14 @@ function App() {
   const [isActiveAbout, setActiveAbout] = useState(false);
   const [isActiveEducation, setActiveEducation] = useState(false);
   const [isActiveSkills, setActiveSkills] = useState(false);
+  const [isActiveProjects, setActiveProjects] = useState(false);
   const [isActiveContacts, setActiveContacts] = useState(false);
   const activeHomeSetter = () => {
     setActiveHome(true);
     setActiveAbout(false);
     setActiveEducation(false);
     setActiveSkills(false);
+    setActiveProjects(false);
     setActiveContacts(false);
   };
   const activeAboutSetter = () => {
@@ -31,6 +34,7 @@ function App() {
     setActiveAbout(true);
     setActiveEducation(false);
     setActiveSkills(false);
+    setActiveProjects(false);
     setActiveContacts(false);
   };
   const activeEducationSetter = () => {
@@ -38,6 +42,7 @@ function App() {
     setActiveAbout(false);
     setActiveEducation(true);
     setActiveSkills(false);
+    setActiveProjects(false);
     setActiveContacts(false);
   };
   const activeSkillsSetter = () => {
@@ -45,6 +50,15 @@ function App() {
     setActiveAbout(false);
     setActiveEducation(false);
     setActiveSkills(true);
+    setActiveProjects(false);
+    setActiveContacts(false);
+  };
+  const activeProjectsSetter = () => {
+    setActiveHome(false);
+    setActiveAbout(false);
+    setActiveEducation(false);
+    setActiveSkills(false);
+    setActiveProjects(true);
     setActiveContacts(false);
   };
   const activeContactsSetter = () => {
@@ -52,6 +66,7 @@ function App() {
     setActiveAbout(false);
     setActiveEducation(false);
     setActiveSkills(false);
+    setActiveProjects(false);
     setActiveContacts(true);
   };
 
@@ -82,11 +97,13 @@ function App() {
         isActiveAbout={isActiveAbout}
         isActiveEducation={isActiveEducation}
         isActiveSkills={isActiveSkills}
+        isActiveProjects={isActiveProjects}
         isActiveContacts={isActiveContacts}
         activeHomeSetter={activeHomeSetter}
         activeAboutSetter={activeAboutSetter}
         activeEducationSetter={activeEducationSetter}
         activeSkillsSetter={activeSkillsSetter}
+        activeProjectsSetter={activeProjectsSetter}
         activeContactsSetter={activeContactsSetter}
         isBurgerMenuShowed={isBurgerMenuShowed}
         showBurgerMenu={showBurgerMenu}
@@ -97,11 +114,13 @@ function App() {
           isActiveAbout={isActiveAbout}
           isActiveEducation={isActiveEducation}
           isActiveSkills={isActiveSkills}
+          isActiveProjects={isActiveProjects}
           isActiveContacts={isActiveContacts}
           activeHomeSetter={activeHomeSetter}
           activeAboutSetter={activeAboutSetter}
           activeEducationSetter={activeEducationSetter}
           activeSkillsSetter={activeSkillsSetter}
+          activeProjectsSetter={activeProjectsSetter}
           activeContactsSetter={activeContactsSetter}
           isBurgerMenuShowed={isBurgerMenuShowed}
           showBurgerMenu={showBurgerMenu}
@@ -112,6 +131,7 @@ function App() {
       <AboutSection />
       <EducationSection />
       <SkillsSection />
+      <ProjectsSection />
       <ContactSection />
       <Footer />
       <FixedButton
