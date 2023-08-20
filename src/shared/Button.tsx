@@ -6,7 +6,8 @@ type ThemesTypes = "dark" | "light";
 type ButtonProps = {
   title: string;
   theme?: ThemesTypes;
-  link?: string
+  link?: string,
+  type?: string
 };
 
 const Button: FC<ButtonProps> = (props) => {

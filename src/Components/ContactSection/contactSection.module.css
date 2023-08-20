@@ -74,6 +74,30 @@ form {
     color: var(--text-color);
 }
 
+.submitButton {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 2.5rem; 
+    background: var(--bg-color);
+    border: 0.2rem solid var(--main-color);
+    border-radius: 0.8rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    color: var(--main-color);
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.submitButton:hover {
+    background: var(--second-bg-color);
+    transform: scale(1.05);
+}
+
 @media (max-width: 1199.98px) {
 
 }
