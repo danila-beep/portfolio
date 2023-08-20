@@ -1,81 +1,80 @@
 .skillsWrapper {
-    position: relative;
-    min-height: 100vh;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--second-bg-color);
+  position: relative;
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--second-bg-color);
 }
 
 .skillsContainer {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0 9%;
-    gap: 5rem;
-    margin: 9% 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 9%;
+  gap: 5rem;
+  margin: 9% 0;
 }
 
 .skillsRow {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 10rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10rem;
 }
 
 .skillsColumn {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
 }
 
 .title {
-    font-size: 2.5rem;
+  font-size: 2.5rem;
 }
 
 .skillsBox {
-
 }
 
 .skillsContent {
-        position: relative;
-        border: .5rem solid var(--main-color);
-        border-radius: .6rem;
-        padding: .5rem 1.5rem;
-        overflow: hidden;
-        z-index: 1;
+  position: relative;
+  border: 0.5rem solid var(--main-color);
+  border-radius: 0.6rem;
+  padding: 0.5rem 1.5rem;
+  overflow: hidden;
+  z-index: 1;
 }
 
 .skillsContent::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0%;
-    height: 100%;
-    background: var(--bg-color);
-    z-index: -1;
-    transition: .5s;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: var(--bg-color);
+  z-index: -1;
+  transition: 0.5s;
 }
 
 .skillsContent:hover::before {
-    width: 100%;
+  width: 100%;
 }
 
 .progress {
-    padding: 1rem 0;
+  padding: 1rem 0;
 }
 
 .progress h3 {
-    font-size: 1.7rem;
-    display: flex;
-    justify-content: space-between;
+  font-size: 1.7rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 .progress h3 span {
@@ -83,189 +82,117 @@
 }
 
 .bar {
-    height: 2.5rem;
-    border-radius: .6rem;
-    border: .2rem solid var(--main-color);
-    padding: .5rem;
-    margin: 1rem 0;
+  height: 2.5rem;
+  border-radius: 0.6rem;
+  border: 0.2rem solid var(--main-color);
+  padding: 0.5rem;
+  margin: 1rem 0;
 }
 
 .bar span {
-    display: block;
-    height: 100%;
-    width: 1%;
-    border-radius: .3rem;
-    background: var(--main-color);
-}
-
-.appear10 {
-    animation: appearance10 3s ease;
-}
-
-@keyframes appearance10 {
-    from {
-        width: 1%;
-    }
-    to {
-        width: 10%;
-    }
-}
-/**/
-
-.appear20 {
-    animation: appearance20 3s ease;
-}
-
-@keyframes appearance20 {
-    from {
-        width: 1%;
-    }
-    to {
-        width: 20%;
-    }
-}
-/**/
-
-.appear30 {
-    animation: appearance30 3s ease;
-}
-
-@keyframes appearance30 {
-    from {
-        width: 1%;
-    }
-    to {
-        width: 30%;
-    }
-}
-/**/
-
-.appear40 {
-    animation: appearance40 3s ease;
-}
-
-@keyframes appearance40 {
-    from {
-        width: 1%;
-    }
-    to {
-        width: 40%;
-    }
-}
-/**/
-
-.appear50 {
-    animation: appearance50 3s ease;
-}
-
-@keyframes appearance50 {
-    from {
-        width: 1%;
-    }
-    to {
-        width: 50%;
-    }
-}
-/**/
-
-.appear60 {
-    animation: appearance60 3s ease;
-}
-
-@keyframes appearance60 {
-    from {
-        width: 1%;
-    }
-    to {
-        width: 60%;
-    }
-}
-/**/
-
-.appear70 {
-    animation: appearance70 3s ease;
-}
-
-@keyframes appearance70 {
-    from {
-        width: 1%;
-    }
-    to {
-        width: 70%;
-    }
-}
-
-.appear80 {
-    animation: appearance80 3s ease;
-}
-
-@keyframes appearance80 {
-    from {
-        width: 1%;
-    }
-    to {
-        width: 80%;
-    }
-}
-/**/
-
-.appear90 {
-    animation: appearance90 3s ease;
-}
-
-@keyframes appearance90 {
-    from {
-        width: 1%;
-    }
-    to {
-        width: 90%;
-    }
-}
-
-.appear100 {
-    animation: appearance100 3s ease;
-}
-
-@keyframes appearance100 {
-    from {
-        width: 1%;
-    }
-    to {
-        width: 100%;
-    }
+  display: block;
+  height: 100%;
+  width: 1%;
+  border-radius: 0.3rem;
+  background: var(--main-color);
 }
 
 .skillsColumn:nth-child(1) .skillsContent .progress:nth-child(1) .bar span {
-    width: 90%;
-}
-.skillsColumn:nth-child(1) .skillsContent .progress:nth-child(2) .bar span {
-    width: 40%;
-}
-.skillsColumn:nth-child(1) .skillsContent .progress:nth-child(3) .bar span {
-    width: 70%;
+  width: 100%;
 }
 
-.skillsColumn:nth-child(2) .skillsContent .progress:nth-child(1) .bar span {
-    width: 50%;
+.htmlSkillAppear {
+  animation: htmlSkillAppear 3s ease;
 }
-.skillsColumn:nth-child(2) .skillsContent .progress:nth-child(2) .bar span {
+
+@keyframes htmlSkillAppear {
+  from {
+    width: 1%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.skillsColumn:nth-child(1) .skillsContent .progress:nth-child(2) .bar span {
+  width: 100%;
+}
+
+.cssSkillAppear {
+  animation: cssSkillAppear 3s ease;
+}
+
+@keyframes cssSkillAppear {
+  from {
+    width: 1%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.skillsColumn:nth-child(1) .skillsContent .progress:nth-child(3) .bar span {
+  width: 80%;
+}
+
+.jsSkillAppear {
+  animation: jsSkillAppear 3s ease;
+}
+
+@keyframes jsSkillAppear {
+  from {
+    width: 1%;
+  }
+  to {
     width: 80%;
+  }
+}
+
+.skillsColumn:nth-child(1) .skillsContent .progress:nth-child(4) .bar span {
+  width: 70%;
+}
+
+.reactSkillAppear {
+  animation: reactSkillAppear 3s ease;
+}
+
+@keyframes reactSkillAppear {
+  from {
+    width: 1%;
+  }
+  to {
+    width: 70%;
+  }
+}
+
+.skillsColumn:nth-child(1) .skillsContent .progress:nth-child(5) .bar span {
+  width: 70%;
+}
+
+.restApiSkillAppear {
+  animation: restApiSkillAppear 3s ease;
+}
+
+@keyframes restApiSkillAppear {
+  from {
+    width: 1%;
+  }
+  to {
+    width: 70%;
+  }
 }
 
 @media (max-width: 1199.98px) {
-
 }
 
 @media (max-width: 991.98px) {
-
 }
 
 @media (max-width: 767.98px) {
-    .skillsRow {
-        flex-direction: column;
-    }
+  .skillsRow {
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 575.98px) {
-
 }

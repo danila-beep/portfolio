@@ -1,4 +1,4 @@
-import React, { FC, UIEvent, useState } from "react";
+import React, { FC, UIEvent, memo, useState } from "react";
 import s from "./header.module.css";
 import { UilBars } from "@iconscout/react-unicons";
 import NavLink from "../../shared/NavLink";
@@ -20,7 +20,7 @@ type HeaderProps = {
   showBurgerMenu: () => void;
 };
 
-const Header: FC<HeaderProps> = (props) => {
+const Header: FC<HeaderProps> = memo((props) => {
   window.onscroll = () => {
     document
       .querySelector("header")
@@ -29,7 +29,7 @@ const Header: FC<HeaderProps> = (props) => {
 
   return (
     <header className={s.header}>
-      <a href="#" className={s.logo}>
+      <a className={s.logo}>
         Danila-beep
       </a>
 
@@ -77,6 +77,6 @@ const Header: FC<HeaderProps> = (props) => {
       </div>
     </header>
   );
-};
+});
 
 export default Header;

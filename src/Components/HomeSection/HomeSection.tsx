@@ -10,18 +10,19 @@ const HomeSection = () => {
       <div className={s.homeContainer}>
         <div className={s.homeContent}>
           <Heading>
-            Hi, I`m <span>Danila Nagovicin</span>
+            <span>Danila Nagovicin</span>
           </Heading>
 
           <div className={s.textAnimate}>
-            <h3>Front-End Developer</h3>
+            <h3>Front-End Разработчик</h3>
           </div>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A
-            assumenda atque autem consectetur cupiditate error et, ex expedita
-            explicabo ipsa labore laboriosam, libero minima neque nihil nulla
-            numquam optio quam quis quos ratione rem sed sit suscipit ullam vel
-            velit!
+            Привет! Я - junior React разработчик с опытом разработки с
+            использованием React, JavaScript, HTML и CSS. Я стараюсь создавать
+            качественные веб-приложения, используя аккуратный и эффективный код.
+            На этом сайте вы найдете примеры моих проектов, которые
+            демонстрируют мои навыки и стиль разработки. Если у вас есть вопросы
+            или предложения, свяжитесь со мной!
           </p>
           <div className={s.buttonBox}>
             <Button title={"Hire Me"} theme={"dark"} />

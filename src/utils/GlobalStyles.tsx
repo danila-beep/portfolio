@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { memo } from "react";
 import { createGlobalStyle } from "styled-components";
 
 type GlobalColorsProps = {
@@ -10,7 +10,7 @@ type GlobalColorsProps = {
   };
 };
 
-const GlobalStyles = (props: GlobalColorsProps) => {
+const GlobalStyles = memo((props: GlobalColorsProps) => {
   const GlobalStyle = createGlobalStyle`
       :root {
         --bg-color: ${props.globalColorPalette["bg-color"]};
@@ -21,6 +21,6 @@ const GlobalStyles = (props: GlobalColorsProps) => {
     `;
 
   return <GlobalStyle />;
-};
+});
 
 export default GlobalStyles;

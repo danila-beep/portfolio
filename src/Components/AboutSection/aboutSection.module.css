@@ -56,7 +56,7 @@
 .aboutPhoto {
     width: 90%;
     height: 90%;
-    background-image: url("/src/assets/photo2.png");
+    background-image: url("/src/assets/photos/profilePhoto2.png");
     background-position: center;
     background-size: cover;
     border-radius: 50%;

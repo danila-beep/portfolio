@@ -52,7 +52,7 @@
 .homePhoto {
     width: 40rem;
     height: 40rem;
-    background-image: url(/src/assets/IMG_1775.jpeg);
+    background-image: url(/src/assets/photos/profilePhoto1.jpeg);
     -webkit-background-size: cover;
     background-size: cover;
     background-position: center;

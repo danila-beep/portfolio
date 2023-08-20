@@ -13,6 +13,13 @@ import { blueColorPalette } from "./shared/ColorThemes";
 import FixedButton from "./shared/FixedButton";
 import ProjectsSection from "./Components/ProjectsSection/ProjectsSection";
 
+type ThemeType = {
+  "bg-color": string;
+  "second-bg-color": string;
+  "text-color": string;
+  "main-color": string;
+};
+
 function App() {
   // Active State & Setters
   const [isActiveHome, setActiveHome] = useState(true);
@@ -69,6 +76,7 @@ function App() {
     setActiveProjects(false);
     setActiveContacts(true);
   };
+  //TODO: Узнать как можно сократить | как сделать переключение активных стилей при скролле
 
   // Burger menu
   const [isBurgerMenuShowed, setBurgerMenuShowed] = useState(false);
@@ -79,7 +87,7 @@ function App() {
   // Theme changer
   const [globalColorPalette, setGlobalColorPalette] =
     useState(blueColorPalette);
-  const themeSwitcher = (theme: any) => {
+  const themeSwitcher = (theme: ThemeType) => {
     setGlobalColorPalette(theme);
   };
   const [isColorMenuShowed, setColorMenuShowed] = useState(false);

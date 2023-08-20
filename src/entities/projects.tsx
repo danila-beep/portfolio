@@ -3,6 +3,9 @@ import JestIcon from "../assets/svgs/JestIcon";
 import ReduxIcon from "../assets/svgs/ReduxIcon";
 import StoryBookIcon from "../assets/svgs/StoryBookIcon";
 import TypeScriptIcon from "../assets/svgs/TypeScriptIcon";
+import todoListImage from "../assets/projectsImages/todoListImage.png";
+import socialMediaImage from "../assets/projectsImages/socialMediaProjectImage.png";
+import componentsImage from "../assets/projectsImages/componentsProject.png"
 
 type Tag = {
   id: number;
@@ -20,7 +23,7 @@ type ProjectItem = {
   description: string;
   buttonTitle: string;
   siteLink: string;
-  photo: string
+  photo: string;
 };
 
 type Projects = ProjectItem[];
@@ -47,11 +50,6 @@ export const projects: Projects = [
         name: "Jest",
       },
       {
-        id: 1.4,
-        logo: <StoryBookIcon />,
-        name: "StoryBook",
-      },
-      {
         id: 1.5,
         logo: <AxiosIcon />,
         name: "axios",
@@ -61,22 +59,53 @@ export const projects: Projects = [
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliasoptio obcaecati rerum possimus est illo atque velit natusdignissimos vel.",
     buttonTitle: "Click to visit site",
     siteLink: "https://danila-beep.github.io/todoList/",
-    photo: "/src/assets/todoListProjectImage.png"
+    photo: todoListImage,
   },
   {
     id: 2,
-    title: "StoryBook Ui Library (in work)",
+    title: "Social Media",
     filter: "React",
     tags: [
-      { 
-        id: 2.1, 
-        logo: <StoryBookIcon />, 
-        name: "Storybook",
-      }
+      {
+        id: 2.1,
+        logo: <TypeScriptIcon />,
+        name: "TypeScript",
+      },
+      {
+        id: 2.2,
+        logo: <ReduxIcon />,
+        name: "Redux",
+      },
+      {
+        id: 2.3,
+        logo: <AxiosIcon />,
+        name: "axios",
+      },
     ],
-    description: "12311231241238947387412647312647812634781263471678346172863784162398741698734612341298346812342312",
+    description: "Social media project",
     buttonTitle: "Click to go to site",
-    siteLink: "https://danila-beep.github.io/storybook_ui/",
-    photo: "/src/assets/StorybookProjectImage.png"
+    siteLink: "",
+    photo: socialMediaImage,
+  },
+  {
+    id: 3,
+    title: "Reusable Components",
+    filter: "React",
+    tags: [
+      {
+        id: 3.1,
+        logo: <TypeScriptIcon />,
+        name: "TypeScript",
+      },
+      {
+        id: 3.2,
+        logo: <ReduxIcon />,
+        name: "Redux",
+      },
+    ],
+    description: "Simple reusable react components (like clock, timer etc)",
+    buttonTitle: "Click to go to site",
+    siteLink: "",
+    photo: componentsImage,
   },
 ];

@@ -3,14 +3,7 @@ import s from "./projectsSection.module.css";
 import Heading from "../../shared/Heading";
 import { SectionWrapper } from "../../shared/SectionWrapper";
 import Button from "../../shared/Button";
-import { UilArrow, UilArrowRight, UilReact } from "@iconscout/react-unicons";
-import ReduxIcon from "../../assets/svgs/ReduxIcon";
-import TypeScriptIcon from "../../assets/svgs/TypeScriptIcon";
-import JestIcon from "../../assets/svgs/JestIcon";
-import StoryBookIcon from "../../assets/svgs/StoryBookIcon";
-import AxiosIcon from "../../assets/svgs/AxiosIcon";
 import { projects } from "../../entities/projects";
-import styled from "styled-components";
 
 const ProjectsSection = () => {
   const [filterNavItems, setFilterNavItems] = useState([
@@ -54,9 +47,9 @@ const ProjectsSection = () => {
     return filteredProjects.map((project) => {
       return (
         <div className={s.card} key={project.id}>
-          <BackSideBox imageLink={project.photo}>
-            <img />
-          </BackSideBox>
+          <div className={s.projectImage}>
+            <img src={project.photo} alt={project.title} />
+          </div>
           <div className={s.content}>
             <h2>{project.title}</h2>
             <ul className={s.technologies}>
@@ -65,10 +58,13 @@ const ProjectsSection = () => {
               })}
             </ul>
             <p className={s.projectDescription}>{project.description}</p>
-            <Button
-              title={project.buttonTitle}
-              link={project.siteLink}
-            ></Button>
+            <div className={s.projectBtns}>
+              <Button
+                title={project.buttonTitle}
+                link={project.siteLink}
+              ></Button>
+              <Button title="Git Hub repo"></Button>
+            </div>
           </div>
         </div>
       );
@@ -90,25 +86,3 @@ const ProjectsSection = () => {
 };
 
 export default ProjectsSection;
-
-const BackSideBox = styled.div<{imageLink: string}>`
-  width: 50%;
-  height: 100%;
-  background: var(--bg-color);
-  border: 0.5rem solid var(--main-color);
-  border-radius: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  & img {
-    width: 100%;
-    height: 100%;
-    border-radius: 0.5rem;
-    z-index: 1;
-    background-image: ${props => {
-      return `url(${props.imageLink})`
-    }};
-    background-size: contain;
-  }
-`;
