@@ -2,22 +2,13 @@ import React, { FC } from "react";
 import s from "./burgerMenu.module.css";
 import NavLink from "../../shared/NavLink";
 import { UilMultiply } from "@iconscout/react-unicons";
+import { NavLinkType } from "../../App";
 
 type BurgerProps = {
-  isActiveHome: boolean;
-  isActiveAbout: boolean;
-  isActiveEducation: boolean;
-  isActiveSkills: boolean;
-  isActiveProjects: boolean;
-  isActiveContacts: boolean;
-  activeHomeSetter: () => void;
-  activeAboutSetter: () => void;
-  activeEducationSetter: () => void;
-  activeSkillsSetter: () => void;
-  activeProjectsSetter: () => void;
-  activeContactsSetter: () => void;
   isBurgerMenuShowed: boolean;
   showBurgerMenu: () => void;
+  navLinksState: NavLinkType[];
+  setActiveBtnNav: (e: any) => void;
 };
 
 const BurgerMenu: FC<BurgerProps> = (props) => {
@@ -25,57 +16,30 @@ const BurgerMenu: FC<BurgerProps> = (props) => {
     props.showBurgerMenu();
   };
 
+  const navLinksRender = () => {
+    return props.navLinksState.map((navLink) => {
+      return (
+        <NavLink
+          key={navLink.title}
+          id={navLink.id}
+          title={navLink.title}
+          isActive={navLink.isActive}
+          href={navLink.href}
+          setActiveBtnNav={props.setActiveBtnNav}
+          size="6rem"
+          showBurgerMenu={props.showBurgerMenu}
+          isBurgerMenu={true}
+        />
+      );
+    });
+  };
+
   return (
     <nav className={s.burgerNav}>
       <div className={s.closeButton} onClick={onBurgerNavClick}>
         <UilMultiply size={"6rem"} />
       </div>
-      <NavLink
-        title={"Home"}
-        href={"#home"}
-        isActive={props.isActiveHome}
-        activeSetter={props.activeHomeSetter}
-        size={"6rem"}
-        onClick={onBurgerNavClick}
-      />
-      <NavLink
-        title={"About"}
-        href={"#about"}
-        isActive={props.isActiveAbout}
-        activeSetter={props.activeAboutSetter}
-        size={"6rem"}
-        onClick={onBurgerNavClick}
-      />
-      <NavLink
-        title={"Educations"}
-        href={"#education"}
-        isActive={props.isActiveEducation}
-        activeSetter={props.activeEducationSetter}
-        size={"6rem"}
-        onClick={onBurgerNavClick}
-      />
-      <NavLink
-        title={"Skills"}
-        href={"#skills"}
-        isActive={props.isActiveSkills}
-        activeSetter={props.activeSkillsSetter}
-        size={"6rem"}
-        onClick={onBurgerNavClick}
-      />
-      <NavLink
-        title={"Projects"}
-        href={"#projects"}
-        isActive={props.isActiveProjects}
-        activeSetter={props.activeProjectsSetter}
-      />
-      <NavLink
-        title={"Contacts"}
-        href={"#contacts"}
-        isActive={props.isActiveContacts}
-        activeSetter={props.activeContactsSetter}
-        size={"6rem"}
-        onClick={onBurgerNavClick}
-      />
+      {navLinksRender()}
     </nav>
   );
 };

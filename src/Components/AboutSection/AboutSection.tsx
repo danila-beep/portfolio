@@ -2,10 +2,14 @@ import s from "./aboutSection.module.css";
 import Button from "../../shared/Button";
 import Heading from "../../shared/Heading";
 import { SectionWrapper } from "../../shared/SectionWrapper";
+import { SectionType } from "../../App";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
 
-const AboutSection = () => {
+const AboutSection = (props: SectionType) => {
+
   return (
-    <SectionWrapper id={"about"} invertedColor>
+    <SectionWrapper id={props.hrefId} invertedColor>
       <div className={s.aboutContainer}>
         <Heading>
           About <span>Me</span>

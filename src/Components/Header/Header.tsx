@@ -2,22 +2,13 @@ import React, { FC, UIEvent, memo, useState } from "react";
 import s from "./header.module.css";
 import { UilBars } from "@iconscout/react-unicons";
 import NavLink from "../../shared/NavLink";
+import { NavLinkType } from "../../App";
 
 type HeaderProps = {
-  isActiveHome: boolean;
-  isActiveAbout: boolean;
-  isActiveEducation: boolean;
-  isActiveSkills: boolean;
-  isActiveProjects: boolean;
-  isActiveContacts: boolean;
-  activeHomeSetter: () => void;
-  activeAboutSetter: () => void;
-  activeEducationSetter: () => void;
-  activeSkillsSetter: () => void;
-  activeProjectsSetter: () => void;
-  activeContactsSetter: () => void;
   isBurgerMenuShowed: boolean;
   showBurgerMenu: () => void;
+  navLinksState: NavLinkType[];
+  setActiveBtnNav: (e: any) => void
 };
 
 const Header: FC<HeaderProps> = memo((props) => {
@@ -27,50 +18,26 @@ const Header: FC<HeaderProps> = memo((props) => {
       ?.classList.toggle(s.sticky, window.pageYOffset > 100);
   };
 
+  const navLinksRender = () => {
+    return props.navLinksState.map((navLink) => {
+      return (
+        <NavLink
+          key={navLink.title}
+          id={navLink.id}
+          title={navLink.title}
+          isActive={navLink.isActive}
+          href={navLink.href}
+          setActiveBtnNav={props.setActiveBtnNav}
+        />
+      );
+    });
+  };
+
   return (
     <header className={s.header}>
-      <a className={s.logo}>
-        Danila-beep
-      </a>
+      <a className={s.logo}>Danila-beep</a>
 
-      <nav className={s.navbar}>
-        <NavLink
-          title={"Home"}
-          href={"#home"}
-          isActive={props.isActiveHome}
-          activeSetter={props.activeHomeSetter}
-        />
-        <NavLink
-          title={"About"}
-          href={"#about"}
-          isActive={props.isActiveAbout}
-          activeSetter={props.activeAboutSetter}
-        />
-        <NavLink
-          title={"Educations"}
-          href={"#education"}
-          isActive={props.isActiveEducation}
-          activeSetter={props.activeEducationSetter}
-        />
-        <NavLink
-          title={"Skills"}
-          href={"#skills"}
-          isActive={props.isActiveSkills}
-          activeSetter={props.activeSkillsSetter}
-        />
-        <NavLink
-          title={"Projects"}
-          href={"#projects"}
-          isActive={props.isActiveProjects}
-          activeSetter={props.activeProjectsSetter}
-        />
-        <NavLink
-          title={"Contacts"}
-          href={"#contacts"}
-          isActive={props.isActiveContacts}
-          activeSetter={props.activeContactsSetter}
-        />
-      </nav>
+      <nav className={s.navbar}>{navLinksRender()}</nav>
 
       <div className={s.burger} onClick={props.showBurgerMenu}>
         <UilBars size={40} />

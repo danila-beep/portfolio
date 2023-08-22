@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import s from "./projectsSection.module.css";
 import Heading from "../../shared/Heading";
 import { SectionWrapper } from "../../shared/SectionWrapper";
 import Button from "../../shared/Button";
 import { projects } from "../../entities/projects";
+import { SectionType } from "../../App";
+import { useInView } from "react-intersection-observer";
 
-const ProjectsSection = () => {
+const ProjectsSection = (props: SectionType) => {
+
   const [filterNavItems, setFilterNavItems] = useState([
     { id: 1, title: "Native JS/TS", isActive: false, filterValue: "Native" },
     { id: 2, title: "React", isActive: true, filterValue: "React" },
@@ -72,7 +75,7 @@ const ProjectsSection = () => {
   };
 
   return (
-    <SectionWrapper id="projects">
+    <SectionWrapper id={props.hrefId} >
       <div className={s.projectsSectionContent}>
         <Heading centered>
           My <span>Projects</span>

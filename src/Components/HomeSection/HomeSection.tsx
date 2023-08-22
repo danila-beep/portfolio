@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Button from "../../shared/Button";
 import Heading from "../../shared/Heading";
 import s from "./homeSection.module.css";
 import { SectionWrapper } from "../../shared/SectionWrapper";
+import { SectionType } from "../../App";
+import { useInView } from "react-intersection-observer";
 
-const HomeSection = () => {
+const HomeSection = (props: SectionType) => {
+
   return (
-    <SectionWrapper id={"home"}>
+    <SectionWrapper id={props.hrefId}>
       <div className={s.homeContainer}>
         <div className={s.homeContent}>
           <Heading>

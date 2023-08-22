@@ -20,63 +20,48 @@ type ThemeType = {
   "main-color": string;
 };
 
+export type NavLinkNameType =
+  | "Home"
+  | "About"
+  | "Education"
+  | "Skills"
+  | "Project"
+  | "Contacts";
+export type NavLinkType = {
+  id: number;
+  title: NavLinkNameType;
+  isActive: boolean;
+  href: string;
+};
+
+export type SectionType = {
+  id: number;
+  hrefId: string;
+};
+
 function App() {
-  // Active State & Setters
-  const [isActiveHome, setActiveHome] = useState(true);
-  const [isActiveAbout, setActiveAbout] = useState(false);
-  const [isActiveEducation, setActiveEducation] = useState(false);
-  const [isActiveSkills, setActiveSkills] = useState(false);
-  const [isActiveProjects, setActiveProjects] = useState(false);
-  const [isActiveContacts, setActiveContacts] = useState(false);
-  const activeHomeSetter = () => {
-    setActiveHome(true);
-    setActiveAbout(false);
-    setActiveEducation(false);
-    setActiveSkills(false);
-    setActiveProjects(false);
-    setActiveContacts(false);
+  const [navLinksState, setNavLinksState] = useState<NavLinkType[]>([
+    { id: 1, title: "Home", isActive: true, href: `#home` },
+    { id: 2, title: "About", isActive: false, href: `#about` },
+    { id: 3, title: "Education", isActive: false, href: `#education` },
+    { id: 4, title: "Skills", isActive: false, href: `#skills` },
+    { id: 5, title: "Project", isActive: false, href: `#projects` },
+    { id: 6, title: "Contacts", isActive: false, href: `#contacts` },
+  ]);
+
+  const setActiveBtnNav = (id: any) => {
+    setNavLinksState(
+      navLinksState.map((navLink) => {
+        if (id === navLink.id.toString()) {
+          return { ...navLink, isActive: true };
+        } else {
+          return { ...navLink, isActive: false };
+        }
+      })
+    );
   };
-  const activeAboutSetter = () => {
-    setActiveHome(false);
-    setActiveAbout(true);
-    setActiveEducation(false);
-    setActiveSkills(false);
-    setActiveProjects(false);
-    setActiveContacts(false);
-  };
-  const activeEducationSetter = () => {
-    setActiveHome(false);
-    setActiveAbout(false);
-    setActiveEducation(true);
-    setActiveSkills(false);
-    setActiveProjects(false);
-    setActiveContacts(false);
-  };
-  const activeSkillsSetter = () => {
-    setActiveHome(false);
-    setActiveAbout(false);
-    setActiveEducation(false);
-    setActiveSkills(true);
-    setActiveProjects(false);
-    setActiveContacts(false);
-  };
-  const activeProjectsSetter = () => {
-    setActiveHome(false);
-    setActiveAbout(false);
-    setActiveEducation(false);
-    setActiveSkills(false);
-    setActiveProjects(true);
-    setActiveContacts(false);
-  };
-  const activeContactsSetter = () => {
-    setActiveHome(false);
-    setActiveAbout(false);
-    setActiveEducation(false);
-    setActiveSkills(false);
-    setActiveProjects(false);
-    setActiveContacts(true);
-  };
-  //TODO: Узнать как можно сократить | как сделать переключение активных стилей при скролле
+
+  console.log(navLinksState);
 
   // Burger menu
   const [isBurgerMenuShowed, setBurgerMenuShowed] = useState(false);
@@ -101,46 +86,81 @@ function App() {
     <div className={"App"}>
       <GlobalStyles globalColorPalette={globalColorPalette} />
       <Header
-        isActiveHome={isActiveHome}
-        isActiveAbout={isActiveAbout}
-        isActiveEducation={isActiveEducation}
-        isActiveSkills={isActiveSkills}
-        isActiveProjects={isActiveProjects}
-        isActiveContacts={isActiveContacts}
-        activeHomeSetter={activeHomeSetter}
-        activeAboutSetter={activeAboutSetter}
-        activeEducationSetter={activeEducationSetter}
-        activeSkillsSetter={activeSkillsSetter}
-        activeProjectsSetter={activeProjectsSetter}
-        activeContactsSetter={activeContactsSetter}
         isBurgerMenuShowed={isBurgerMenuShowed}
         showBurgerMenu={showBurgerMenu}
+        navLinksState={navLinksState}
+        setActiveBtnNav={setActiveBtnNav}
       />
       {isBurgerMenuShowed ? (
         <BurgerMenu
-          isActiveHome={isActiveHome}
-          isActiveAbout={isActiveAbout}
-          isActiveEducation={isActiveEducation}
-          isActiveSkills={isActiveSkills}
-          isActiveProjects={isActiveProjects}
-          isActiveContacts={isActiveContacts}
-          activeHomeSetter={activeHomeSetter}
-          activeAboutSetter={activeAboutSetter}
-          activeEducationSetter={activeEducationSetter}
-          activeSkillsSetter={activeSkillsSetter}
-          activeProjectsSetter={activeProjectsSetter}
-          activeContactsSetter={activeContactsSetter}
           isBurgerMenuShowed={isBurgerMenuShowed}
           showBurgerMenu={showBurgerMenu}
+          navLinksState={navLinksState}
+          setActiveBtnNav={setActiveBtnNav}
         />
       ) : undefined}
 
-      <HomeSection />
-      <AboutSection />
-      <EducationSection />
-      <SkillsSection />
-      <ProjectsSection />
-      <ContactSection />
+      <HomeSection
+        id={
+          navLinksState[navLinksState.findIndex((el) => el.title === "Home")].id
+        }
+        hrefId={navLinksState[
+          navLinksState.findIndex((el) => el.title === "Home")
+        ].href.substring(1)}
+
+      />
+      <AboutSection
+        id={
+          navLinksState[navLinksState.findIndex((el) => el.title === "About")]
+            .id
+        }
+        hrefId={navLinksState[
+          navLinksState.findIndex((el) => el.title === "About")
+        ].href.substring(1)}
+
+      />
+      <EducationSection
+        id={
+          navLinksState[
+            navLinksState.findIndex((el) => el.title === "Education")
+          ].id
+        }
+        hrefId={navLinksState[
+          navLinksState.findIndex((el) => el.title === "Education")
+        ].href.substring(1)}
+
+      />
+      <SkillsSection
+        id={
+          navLinksState[navLinksState.findIndex((el) => el.title === "Skills")]
+            .id
+        }
+        hrefId={navLinksState[
+          navLinksState.findIndex((el) => el.title === "Skills")
+        ].href.substring(1)}
+
+      />
+      <ProjectsSection
+        id={
+          navLinksState[navLinksState.findIndex((el) => el.title === "Project")]
+            .id
+        }
+        hrefId={navLinksState[
+          navLinksState.findIndex((el) => el.title === "Project")
+        ].href.substring(1)}
+
+      />
+      <ContactSection
+        id={
+          navLinksState[
+            navLinksState.findIndex((el) => el.title === "Contacts")
+          ].id
+        }
+        hrefId={navLinksState[
+          navLinksState.findIndex((el) => el.title === "Contacts")
+        ].href.substring(1)}
+
+      />
       <Footer />
       <FixedButton
         themeSwitcher={themeSwitcher}

@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import s from "./educationSection.module.css";
 import { UilCalender } from "@iconscout/react-unicons";
 import Heading from "../../shared/Heading";
 import { SectionWrapper } from "../../shared/SectionWrapper";
+import { SectionType } from "../../App";
+import { useInView } from "react-intersection-observer";
 
-const EducationSection = () => {
+const EducationSection = (props: SectionType) => {
+
   return (
-    <SectionWrapper id={"education"}>
+    <SectionWrapper id={props.hrefId}>
       <div className={s.educationContainer}>
         <Heading centered>
           My <span>Education</span>

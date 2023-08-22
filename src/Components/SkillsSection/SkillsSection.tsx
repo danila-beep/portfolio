@@ -4,8 +4,11 @@ import Heading from "../../shared/Heading";
 import { SectionWrapper } from "../../shared/SectionWrapper";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { SectionType } from "../../App";
 
-const SkillsSection = memo(() => {
+const SkillsSection = memo((props: SectionType) => {
+
+
   const [ref, inView] = useInView();
   const html = useAnimation();
   const css = useAnimation();
@@ -43,10 +46,12 @@ const SkillsSection = memo(() => {
       react.start({ width: "1%" });
       rest.start({ width: "1%" });
     }
+
   }, [inView, html, css, react, js, rest]);
 
+
   return (
-    <SectionWrapper id={"skills"} ref={ref} invertedColor>
+    <SectionWrapper id={props.hrefId} ref={ref} invertedColor>
       <div className={s.skillsContainer}>
         <Heading centered>
           My <span>skills</span>
