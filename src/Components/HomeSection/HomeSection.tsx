@@ -4,10 +4,10 @@ import Heading from "../../shared/Heading";
 import s from "./homeSection.module.css";
 import { SectionWrapper } from "../../shared/SectionWrapper";
 import { SectionType } from "../../App";
-import { useInView } from "react-intersection-observer";
+//@ts-ignore
+import cv from "../../assets/files/CV.pdf"
 
 const HomeSection = (props: SectionType) => {
-
   return (
     <SectionWrapper id={props.hrefId}>
       <div className={s.homeContainer}>
@@ -28,7 +28,12 @@ const HomeSection = (props: SectionType) => {
             или предложения, свяжитесь со мной!
           </p>
           <div className={s.buttonBox}>
-            <Button title={"Hire Me"} theme={"dark"} />
+            <Button
+              title={"Download CV"}
+              theme={"dark"}
+              download
+              link={cv}
+            />
             <Button title={"Let`s talk"} theme={"light"} />
           </div>
         </div>

@@ -7,7 +7,8 @@ type ButtonProps = {
   title: string;
   theme?: ThemesTypes;
   link?: string,
-  type?: string
+  type?: string,
+  download?: boolean
 };
 
 const Button: FC<ButtonProps> = (props) => {
@@ -56,7 +57,7 @@ const Button: FC<ButtonProps> = (props) => {
     }
   `;
 
-  return <BtnStyled href={props.link}>{props.title}</BtnStyled>;
+  return <BtnStyled download={props.download} href={props.link}>{props.title}</BtnStyled>;
 };
 
 export default Button;
