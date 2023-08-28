@@ -61,8 +61,6 @@ function App() {
     );
   };
 
-  console.log(navLinksState);
-
   // Burger menu
   const [isBurgerMenuShowed, setBurgerMenuShowed] = useState(false);
   const showBurgerMenu = () => {

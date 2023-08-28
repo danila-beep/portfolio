@@ -8,7 +8,6 @@ import { SectionType } from "../../App";
 import { useInView } from "react-intersection-observer";
 
 const ProjectsSection = (props: SectionType) => {
-
   const [filterNavItems, setFilterNavItems] = useState([
     { id: 1, title: "Native JS/TS", isActive: false, filterValue: "Native" },
     { id: 2, title: "React", isActive: true, filterValue: "React" },
@@ -16,24 +15,24 @@ const ProjectsSection = (props: SectionType) => {
     { id: 4, title: "Angular", isActive: false, filterValue: "Angular" },
   ]);
 
-  const navItemsForRender = () => {
-    return filterNavItems.map((navE) => {
-      return (
-        <div
-          className={`${s.filterItem} ${navE.isActive ? s.active : undefined}`}
-          onClick={() => {
-            const newState = [...filterNavItems];
-            newState.forEach((e) => (e.isActive = false));
-            const searchedIndex = newState.findIndex((e) => e.id === navE.id);
-            newState[searchedIndex].isActive = true;
-            setFilterNavItems(newState);
-          }}
-        >
-          {navE.title}
-        </div>
-      );
-    });
-  };
+  // const navItemsForRender = () => {
+  //   return filterNavItems.map((navE) => {
+  //     return (
+  //       <div
+  //         className={`${s.filterItem} ${navE.isActive ? s.active : undefined}`}
+  //         onClick={() => {
+  //           const newState = [...filterNavItems];
+  //           newState.forEach((e) => (e.isActive = false));
+  //           const searchedIndex = newState.findIndex((e) => e.id === navE.id);
+  //           newState[searchedIndex].isActive = true;
+  //           setFilterNavItems(newState);
+  //         }}
+  //       >
+  //         {navE.title}
+  //       </div>
+  //     );
+  //   });
+  // };
 
   const projectsItemsForRender = () => {
     const filteredProjects = projects.filter((filteringProject) => {
@@ -60,13 +59,20 @@ const ProjectsSection = (props: SectionType) => {
                 return <li key={tag.id}>{tag.logo}</li>;
               })}
             </ul>
-            <p className={s.projectDescription}>{project.description}</p>
+            <p className={s.projectDescription}>
+              {project.description ? <div> {project.description} </div>: null}
+              <ul>
+                {project.advantageslist?.map((el) => {
+                  return <li>{el}</li>;
+                })}
+              </ul>
+            </p>
             <div className={s.projectBtns}>
               <Button
                 title={project.buttonTitle}
                 link={project.siteLink}
               ></Button>
-              <Button title="Git Hub repo"></Button>
+              <Button title="Git Hub repo" link={project.gitHubLink}></Button>
             </div>
           </div>
         </div>
@@ -75,12 +81,12 @@ const ProjectsSection = (props: SectionType) => {
   };
 
   return (
-    <SectionWrapper id={props.hrefId} >
+    <SectionWrapper id={props.hrefId}>
       <div className={s.projectsSectionContent}>
         <Heading centered>
           My <span>Projects</span>
         </Heading>
-        <div className={s.filter}>{navItemsForRender()}</div>
+        {/* <div className={s.filter}>{navItemsForRender()}</div> */}
 
         <div className={s.projects}>{projectsItemsForRender()}</div>
       </div>

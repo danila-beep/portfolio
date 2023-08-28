@@ -132,6 +132,19 @@
   font-weight: 600;
   height: 100%;
   word-wrap: break-word;
+  font-style: italic;
+  color: var(--main-color);
+
+}
+
+.projectDescription div {
+  margin-bottom: 1rem;
+}
+
+.projectDescription ul {
+
+  color: var(--text-color);
+  font-style: normal;
 }
 
 .projectBtns {
