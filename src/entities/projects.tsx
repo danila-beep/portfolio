@@ -89,7 +89,7 @@ export const projects: Projects = [
     description: "(currently in work)",
     advantageslist: ["Big Data processing", "Dynamic Pagination"],
     buttonTitle: "Click to go to site",
-    siteLink: "",
+    siteLink: "https://danila-beep.github.io/samurai-way/",
     gitHubLink: "https://github.com/danila-beep/samurai-way",
     photo: socialMediaImage,
   },
