@@ -34,7 +34,7 @@ const HomeSection = (props: SectionType) => {
               download
               link={cv}
             />
-            <Button title={"Let`s talk"} theme={"light"} />
+            {/* <Button title={"Let`s talk"} theme={"light"} /> */}
           </div>
         </div>
         <div className={s.homePhoto}></div>

@@ -50,7 +50,7 @@ const AboutSection = (props: SectionType) => {
           </div>
         </div>
         <div className={s.btnBox}>
-          <Button title={"Read More"} />
+          {/* <Button title={"Read More"} /> */}
         </div>
       </div>
     </SectionWrapper>
